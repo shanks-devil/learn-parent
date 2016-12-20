@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: learn-zuul
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        format: YAML
+        enabled: true
+        prefix: configuration

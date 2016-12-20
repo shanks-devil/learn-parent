@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: learn-user
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        format: YAML
+        enabled: true
+        prefix: configuration
+application:
+  api:
+    desc: This is Spring Cloud Learn Project
+    license:
+      name: Apache License 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
+    title: Spring Cloud Learn
+    version: 1.0.0-SNAPSHOT
+    contact:
+      name: Shanks
+      url: https://github.com/shanks-devil/spring-boot-learning-redis
+      email: roux.d.shanks+git@gmail.com

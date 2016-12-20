@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: learn-ui
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        format: YAML
+        enabled: true
+        prefix: configuration
+learn:
+  api:
+    user: http://learn-user

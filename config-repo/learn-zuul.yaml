@@ -1,0 +1,18 @@
+server:
+  port: 10089
+spring:
+  profiles:
+    active: dev
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+---
+spring:
+  profiles: beta
