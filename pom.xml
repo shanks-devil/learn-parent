@@ -9,6 +9,7 @@
 		<module>learn-user</module>
 		<module>learn-ui</module>
 		<module>learn-config</module>
+		<module>learn-zuul</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
