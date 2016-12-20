@@ -5,4 +5,4 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/shanks/git/config-repo
+          uri: file:///Users/CN40312/git/config-repo
