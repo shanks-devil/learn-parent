@@ -12,6 +12,11 @@ import org.springframework.web.client.RestTemplate;
 
 import com.shanks.learn.ui.mvc.domain.User;
 
+/**
+ * call service via resTemplatet
+ * @author shanks
+ *
+ */
 @Service
 public class UserService {
 

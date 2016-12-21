@@ -40,8 +40,8 @@ public class UserController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public User user(@PathVariable Integer id) throws IOException {
-		//return userService.findById(id);
-		return userServiceRetrofit.findById(id).execute().body();
+		return userService.findById(id);
+		//return userServiceRetrofit.findById(id).execute().body();
 	}
 	
 }

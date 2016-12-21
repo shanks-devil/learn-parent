@@ -9,6 +9,11 @@ import retrofit2.http.Path;
 import com.github.blackshadowwalker.spring.retrofit.RetrofitService;
 import com.shanks.learn.ui.mvc.domain.User;
 
+/**
+ * call service via Retrofit
+ * @author shanks
+ *
+ */
 @RetrofitService(retrofit = "userRetrofit")
 public interface UserServiceRetrofit {
 	
