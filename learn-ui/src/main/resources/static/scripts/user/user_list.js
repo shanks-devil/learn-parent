@@ -11,6 +11,6 @@
         }
     })
 	$.get("/ui/user/list", function(data){
-		app.$data.list = data;
+		app.list = data;
 	});
 }(jQuery));
