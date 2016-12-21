@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="/component/vue/vue.min.js"></script>
-<script type="text/javascript" src="/component/jquery/jquery.js"></script>
-<script type="text/javascript" src="/component/bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="/component/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/component/bootstrap/css/bootstrap-theme.min.css" />
+<script type="text/javascript" src="/webjars/vue/vue.js"></script>
+<script type="text/javascript" src="/webjars/jquery/jquery.js"></script>
+<script type="text/javascript" src="/webjars/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="/webjars/bootstrap/bootstrap-theme.min.css" />
 </head>
 <body class="container-fluid">
 <div id="user">
@@ -19,7 +19,7 @@
     </thead>
     <tbody>
       <tr v-for="item in list">
-        <td>{{ item.id }}</td>
+        <td><span v-on:click="user_info">{{ item.id }}</span> </td>
         <td>{{ item.name }}</td>
         <td>{{ item.mail }}</td>
       </tr>

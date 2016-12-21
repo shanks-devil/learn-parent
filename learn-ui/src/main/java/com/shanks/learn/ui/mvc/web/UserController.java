@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import com.shanks.learn.ui.mvc.service.UserServiceRetrofit;
 
 @Controller
 @RequestMapping("/ui/user")
+@Slf4j
 public class UserController {
 
 	@Resource
@@ -34,6 +36,7 @@ public class UserController {
 	@ResponseBody
 	public List<User> listUser() throws IOException {
 		//return userService.listUser();
+		log.info("UserController.listUser : /{}/{}/{}", "ui", "user", "list");
 		return userServiceRetrofit.listUser().execute().body();
 	}
 	
