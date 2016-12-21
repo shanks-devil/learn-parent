@@ -5,8 +5,10 @@
 			list: []
         },
 		methods: {
-		    user_info : function() {
-                alert("1");
+		    user_info : function(item) {
+               console.log(item.id);
+               console.log(item.name);
+               console.log(item.mail);
             }
         }
     })
