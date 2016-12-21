@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="/component/vue/vue.min.js"></script>
+<script type="text/javascript" src="/component/jquery/jquery.js"></script>
+<script type="text/javascript" src="/component/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/component/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/component/bootstrap/css/bootstrap-theme.min.css" />
+</head>
+<body class="container-fluid">
+<div id="user">
+  <table class="table table-bordered table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in list">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.mail }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+<script type="text/javascript" src="/scripts/user/user_list.js"></script>
+</html>

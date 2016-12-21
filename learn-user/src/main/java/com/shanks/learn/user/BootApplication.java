@@ -14,9 +14,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableTransactionManagement
 @EnableDiscoveryClient
 public class BootApplication {
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(BootApplication.class, args);
 	}
-	
+
 }

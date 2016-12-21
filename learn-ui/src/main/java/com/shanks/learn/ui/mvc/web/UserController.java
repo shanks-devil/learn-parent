@@ -13,24 +13,35 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shanks.learn.ui.mvc.domain.User;
 import com.shanks.learn.ui.mvc.service.UserService;
+import com.shanks.learn.ui.mvc.service.UserServiceRetrofit;
 
 @Controller
-@RequestMapping("/ui")
+@RequestMapping("/ui/user")
 public class UserController {
 
 	@Resource
 	private UserService userService;
 	
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	@ResponseBody
-	public List<User> listUser() throws IOException {
-		return userService.listUser();
+	@Resource
+	private UserServiceRetrofit userServiceRetrofit;
+	
+	@RequestMapping(value = "", method = RequestMethod.GET)
+	public String user() throws IOException {
+		return "user/user_list";
 	}
 	
-	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@ResponseBody
+	public List<User> listUser() throws IOException {
+		//return userService.listUser();
+		return userServiceRetrofit.listUser().execute().body();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public User user(@PathVariable Integer id) throws IOException {
-		return userService.findById(id);
+		//return userService.findById(id);
+		return userServiceRetrofit.findById(id).execute().body();
 	}
 	
 }
