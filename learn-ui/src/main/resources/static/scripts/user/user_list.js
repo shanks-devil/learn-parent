@@ -4,6 +4,12 @@
 		data: {
 			list: []
         },
+        created : function() {
+            var _this = this;
+            $.get("/ui/user/list", function(data){
+                _this.list = data;
+            });
+        },
 		methods: {
 		    user_info : function(item) {
                console.log(item.id);
@@ -12,7 +18,4 @@
             }
         }
     })
-	$.get("/ui/user/list", function(data){
-		app.list = data;
-	});
 }(jQuery));
