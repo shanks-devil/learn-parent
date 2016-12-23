@@ -3,6 +3,7 @@ package com.shanks.learn.user.mvc.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
@@ -19,14 +20,14 @@ public interface UserRepository {
 			@CacheEvict(cacheNames = "user", key = "#p0 + ''") })
 	void delete(Integer id);
 
-	@Caching(evict = { @CacheEvict(cacheNames = "listUser"),
+	@Caching(evict = { @CacheEvict(cacheNames = "listUser", allEntries = true),
 			@CacheEvict(cacheNames = "user", key = "#p0 + ''") })
-	void update(User user);
+	void update(@Param("id") Integer id, @Param("user") User user);
 
 	@Cacheable(cacheNames = "listUser", key = "'listUser'")
 	List<User> listUser();
 
-	@Caching(cacheable = @Cacheable(cacheNames = "user", key = "#p0 + ''"), evict = @CacheEvict(cacheNames = "listUser", allEntries = true))
+	@Cacheable(cacheNames = "user", key = "#p0 + ''")
 	User findById(Integer id);
 
 }

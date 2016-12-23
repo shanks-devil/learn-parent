@@ -27,6 +27,12 @@ public class UserService {
 
 	private final static String FIND_USER_URI = "/learn/user/{id}";
 
+	private final static String CREATE_USER_URI = "/learn/user";
+
+	private final static String DELETE_USER_URI = "/learn/user/{id}";
+
+	private final static String UPDATE_USER_URI = "/learn/user/{id}";
+
 	@Resource
 	private RestTemplate template;
 
@@ -36,9 +42,20 @@ public class UserService {
 				new ParameterizedTypeReference<List<User>>() {
 				}).getBody();
 	}
-
+	
 	public User findById(Integer id) {
 		return template.getForObject(userApi + FIND_USER_URI, User.class, id);
 	}
 
+	public User create(User user) {
+		return template.postForObject(userApi + CREATE_USER_URI, user, User.class);
+	}
+
+	public void delete(Integer id) {
+		template.delete(userApi + DELETE_USER_URI, id);
+	}
+
+	public void update(Integer id, User user) {
+		template.put(userApi + UPDATE_USER_URI, user, id);
+	}
 }

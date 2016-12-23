@@ -10,6 +10,7 @@
 		<where>
 			<if test="name != null"> name = #{name} </if>
 		</where>
+		order by id desc
 	</select>
 	
 	<select id="findById" parameterType="int" resultType="user">
@@ -31,4 +32,12 @@
 		delete from user where id = #{id}
 	</insert>
 
+	<update id="update">
+		update user
+		<set>
+			<if test="user.name != null">name = #{user.name},</if>
+			<if test="user.mail != null">mail = #{user.mail}</if>
+		</set>
+		where id = #{id}
+	</update>
 </mapper>

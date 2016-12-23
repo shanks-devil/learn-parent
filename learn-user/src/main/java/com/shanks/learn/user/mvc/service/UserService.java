@@ -15,16 +15,17 @@ public class UserService {
 	@Resource
 	private UserRepository userRepository;
 
-	public void create(User user) {
+	public User create(User user) {
 		userRepository.create(user);
+		return user;
 	}
 
 	public void delete(Integer id) {
 		userRepository.delete(id);
 	}
 
-	public void update(User user) {
-		userRepository.update(user);
+	public void update(Integer id, User user) {
+		userRepository.update(id, user);
 	}
 
 	public List<User> listUser() {
