@@ -1,9 +1,13 @@
 ;(function($, undefined){
+    Vue.component("learn-title", {
+        template: '<p>i am a component</p>'
+    });
 	var app = new Vue({
 		el: '#user',
 		data: {
 			list: [],
-			user: {}
+			user: {},
+			admin: true
         },
         created: function() {
             var _this = this;
@@ -52,7 +56,8 @@
                      type: 'PUT',
                      data: _this.user,
                      success: function() {
-                       _this.list.splice(_this.user.index, 1, _this.user);
+                       Vue.set(_this.list, _this.user.index, _this.user)
+                       //_this.list.splice(_this.user.index, 1, _this.user);
                        _this.user = {};
                        alert( "success" );
                      },
@@ -60,11 +65,6 @@
                        alert( "error" );
                      }
                  });
-            }
-        },
-        computed: {
-            reversedName: function() {
-                return "abc";
             }
         }
     })
